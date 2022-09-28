@@ -1,7 +1,5 @@
 variable "do_token" {}
 
-variable "gh_token" {}
-
 variable "project_slug" {}
 
 variable "project_description" {}
@@ -32,16 +30,6 @@ variable "load_balancer_size" {
 
 variable "load_balancer_algorithm" {
   default = "round_robin"
-}
-
-variable "gh_repo_name" {}
-
-variable "tf_api_token" {}
-
-variable "top_level_domains" {}
-
-variable "letsencrypt_email" {
-  type = string
 }
 
 variable "min_nodes" {

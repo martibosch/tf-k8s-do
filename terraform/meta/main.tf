@@ -19,14 +19,6 @@ resource "tfe_variable" "do_token" {
   sensitive    = true
 }
 
-resource "tfe_variable" "gh_token" {
-  key          = "gh_token"
-  value        = var.gh_token
-  category     = "terraform"
-  workspace_id = tfe_workspace.base.id
-  sensitive    = true
-}
-
 resource "tfe_variable" "project_slug" {
   key          = "project_slug"
   value        = var.project_slug
@@ -37,35 +29,6 @@ resource "tfe_variable" "project_slug" {
 resource "tfe_variable" "project_description" {
   key          = "project_description"
   value        = var.project_description
-  category     = "terraform"
-  workspace_id = tfe_workspace.base.id
-}
-
-resource "tfe_variable" "gh_repo_name" {
-  key          = "gh_repo_name"
-  value        = var.gh_repo_name
-  category     = "terraform"
-  workspace_id = tfe_workspace.base.id
-}
-
-resource "tfe_variable" "tf_api_token" {
-  key          = "tf_api_token"
-  value        = var.tf_api_token
-  category     = "terraform"
-  workspace_id = tfe_workspace.base.id
-  sensitive    = true
-}
-
-resource "tfe_variable" "top_level_domains" {
-  key          = "top_level_domains"
-  value        = jsonencode(var.top_level_domains)
-  category     = "terraform"
-  workspace_id = tfe_workspace.base.id
-}
-
-resource "tfe_variable" "letsencrypt_email" {
-  key          = "letsencrypt_email"
-  value        = var.letsencrypt_email
   category     = "terraform"
   workspace_id = tfe_workspace.base.id
 }
